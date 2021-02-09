@@ -1,8 +1,15 @@
 import React from 'react';
+import Carousel from "react-material-ui-carousel";
+import { Typography } from '@material-ui/core';
 
 function Works() {
     return (
-        <h1>Works</h1>
+        <>
+            <Typography variant="h1">Works</Typography>
+            <Carousel>
+                
+            </Carousel>
+        </>
     );
 };
 

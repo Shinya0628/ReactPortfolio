@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Skills() {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <Chip

@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles, Typography, Box } from '@material-ui/core';
-import Skills from './Skills';
 import Img from './images/myphoto.JPG';
 
 const useStyles = makeStyles({
@@ -37,7 +36,6 @@ function Info() {
         <div className={classes.root}>
             <Name />
             <MyImg />
-            <Skills />
         </div>
     );
 };

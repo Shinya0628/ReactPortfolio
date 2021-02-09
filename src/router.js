@@ -1,9 +1,16 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core';
 import Home from './Home';
 import About from './About';
 import Works from './Works';
 import Error from './Error';
+
+const useStyles = makeStyles({
+    root: {
+        height: "100vh"
+    }
+});
 
 function HomePage() {
     return <Home />
@@ -22,8 +29,9 @@ function ErrorPage() {
 };
 
 function Routes() {
+    const classes = useStyles();
     return(
-        <div>
+        <div className={classes.root}>
             <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/about" component={AboutPage} />
