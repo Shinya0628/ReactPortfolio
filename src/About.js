@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles, Box, Typography } from '@material-ui/core';
-import Skills from './Skills';
+import { Typography } from '@material-ui/core';
+import { Skills } from './Chips';
 
 function Content() {
     return (
