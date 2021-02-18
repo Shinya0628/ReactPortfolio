@@ -4,8 +4,8 @@ import { Contact } from './Chips';
 import Img from './images/myphoto.JPG';
 
 const useStyles = makeStyles({
-    root: {
-        height: "100vh"
+    titleFont: {
+        fontFamily: "Bebas Neue"
     },
     imgBox: {
         width: "35%",
@@ -15,11 +15,15 @@ const useStyles = makeStyles({
         width: "100%",
         maxWidth: "100%",
         height: "auto"
+    },
+    root: {
+        padding: "100px 0px"
     }
 });
 
 function Name() {
-    return <Typography variant="h2">Shinya Kimura</Typography>
+    const classes = useStyles();
+    return <Typography variant="h2" className={classes.titleFont}>Shinya Kimura</Typography>
 };
 
 function MyImg() {

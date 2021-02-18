@@ -1,21 +1,23 @@
 import React from 'react';
-import { makeStyles, Box, Typography } from '@material-ui/core';
+import { makeStyles, Fade, Typography, Box } from '@material-ui/core';
 
 const useStyles = makeStyles({
     root: {
-        width: "50%",
-        height: "90vh",
-        display: "table-cell",
-        verticalAlign: "middle"
+        padding: "200px 0px"
+    },
+    titleFont: {
+        fontFamily: "Bebas Neue"
     }
 });
 
 function Home() {
     const classes = useStyles();
     return (
-        <Box className={classes.root}>
-            <Typography variant="h1">Hello World</Typography>
-        </Box> 
+        <Fade in timeout={2500}>
+            <Box className={classes.root}>
+                <Typography variant="h1" className={classes.titleFont}>Hello World</Typography>
+            </Box>
+        </Fade>
     );
 };
 

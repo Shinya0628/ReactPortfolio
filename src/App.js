@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import MediaQuery from "react-responsive";
 import { makeStyles, Grid } from '@material-ui/core';
 import Info from './Info';
 import Menu from './Menu';
@@ -7,12 +8,25 @@ import Routes from './router';
 
 const useStyles = makeStyles({
   gridItem1: {
-    background: "red",
+    background: "#FF5700",
     width: "50%",
+    height: "100vh",
     textAlign: "center"
   },
   gridItem2: {
+    background: "#EDEDED",
     width: "50%",
+    height: "100vh",
+    textAlign: "center"
+  },
+  gridItem1Mobile: {
+    background: "#FF5700",
+    width: "100%",
+    textAlign: "center"
+  },
+  gridItem2Mobile: {
+    background: "#EDEDED",
+    width: "100%",
     textAlign: "center"
   }
 });
@@ -20,17 +34,30 @@ const useStyles = makeStyles({
 function App() {
   const classes = useStyles();
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
-        <Grid container direction="row">
-          <Grid item className={classes.gridItem1}>
-            <Info />
+        <MediaQuery query="(min-width: 767px)">
+          <Grid container direction="row">
+            <Grid item className={classes.gridItem1}>
+              <Info />
+            </Grid>
+            <Grid item className={classes.gridItem2}>
+              <Menu />
+              <Routes /> 
+            </Grid>
           </Grid>
-          <Grid item className={classes.gridItem2}>
-            <Menu />
-            <Routes />     
+        </MediaQuery>
+        <MediaQuery query="(max-width: 767px)">
+          <Grid container direction="column">
+            <Grid item className={classes.gridItem1Mobile}>
+              <Info />
+            </Grid>
+            <Grid item className={classes.gridItem2Mobile}>
+              <Menu />
+              <Routes />     
+            </Grid>
           </Grid>
-        </Grid>
+        </MediaQuery>
       </BrowserRouter>
     </div>
   );

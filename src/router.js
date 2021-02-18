@@ -8,7 +8,7 @@ import Error from './Error';
 
 const useStyles = makeStyles({
     root: {
-        height: "100vh"
+        padding: "100px 0px"
     }
 });
 

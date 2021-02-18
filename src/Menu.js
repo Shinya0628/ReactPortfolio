@@ -4,8 +4,9 @@ import { makeStyles, Box, Breadcrumbs } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles((theme) => ({
-    center: {
-        margin: "0 auto"
+    right: {
+        float: "right",
+        marginRight: "10px"
     },
     icon: {
         marginRight: theme.spacing(0.5),
@@ -14,24 +15,28 @@ const useStyles = makeStyles((theme) => ({
         },
     link: {
         display: "flex",
+        color: "black",
         textDecoration: "none"
     },
+    titleFont: {
+        fontFamily: "Bebas Neue"
+    }
 }));
 
 function Menu() {
   const classes = useStyles();
 
   return (
-    <Box className={classes.center}>
+    <Box className={classes.right}>
         <Breadcrumbs aria-label="breadcrumb">
-            <Link to="/" className={classes.link}>
+            <Link to="/" className={classes.link + " " + classes.titleFont}>
                 <HomeIcon className={classes.icon} />
                 HOME
             </Link>
-            <Link to="/about" className={classes.link}>
+            <Link to="/about" className={classes.link + " " + classes.titleFont}>
                 ABOUT
             </Link>
-            <Link to="/works" className={classes.link}>
+            <Link to="/works" className={classes.link + " " + classes.titleFont}>
                 WORKS
             </Link>
         </Breadcrumbs>

@@ -4,11 +4,26 @@ import imgBlog from '../images/Blog.png';
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 345,
+        background: "#404040",
+        maxWidth: 345,
+        margin: "0 auto"
     },
-    media: {
-      height: 140,
+    white: {
+        color: "white"
     },
+    bodyFont: {
+        fontFamily: "Fjalla One"
+    },
+    titleFont: {
+        fontFamily: "Bebas Neue"
+    },
+    right: {
+        float: "right"
+    },
+    link: {
+        color: "#0083FF",
+        textDecoration: "none"
+    }
 });
 
 function Blog() {
@@ -24,21 +39,21 @@ function Blog() {
                     image={imgBlog}
                     title="Blog"
                     />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                    <CardContent className={classes.white}>
+                        <Typography gutterBottom variant="h5" component="h2" className={classes.bodyFont}>
                             Blog
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography variant="body2" component="p" className={classes.bodyFont}>
                             A CRUD application with NodeJS in the backend. It demonstrates getting data in and out of a database.
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography variant="body2" component="p" className={classes.bodyFont}>
                             EJS / Bootstrap / Node.js / MongoDB
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <CardActions>
+                <CardActions className={classes.right}>
                     <Button size="small" color="primary">
-                        <a href="https://node--blog.herokuapp.com/">
+                        <a href="https://node--blog.herokuapp.com/" className={classes.link + " " + classes.titleFont}>
                             Go to website
                         </a>
                     </Button>
