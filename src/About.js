@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaQuery from "react-responsive";
 import { makeStyles, Fade, Box, Typography } from '@material-ui/core';
 import { Skills } from './Chips';
 
@@ -12,6 +13,12 @@ const useStyles = makeStyles({
     },
     titleFont: {
         fontFamily: "Bebas Neue"
+    },
+    space: {
+        height: "50px"
+    },
+    spaceMobile: {
+        height: "20px"
     }
 });
 
@@ -25,14 +32,30 @@ function Content() {
 function About() {
     const classes = useStyles();
     return (
-        <Fade in timeout={2500}>
-            <Box>
-                <Typography variant="h1" className={classes.titleFont}>About Me</Typography>
-                <Content />
-                <Typography variant="h1" className={classes.titleFont}>My Skills</Typography>
-                <Skills />
-            </Box>
-        </Fade>
+        <>
+            <MediaQuery query="(min-width: 769px)">
+                <Fade in timeout={2500}>
+                    <Box>
+                        <Typography variant="h1" className={classes.titleFont}>About Me</Typography>
+                        <Content />
+                        <Box className={classes.space}></Box>
+                        <Typography variant="h1" className={classes.titleFont}>My Skills</Typography>
+                        <Skills />
+                    </Box>
+                </Fade>
+            </MediaQuery>
+            <MediaQuery query="(max-width: 769px)">
+                <Fade in timeout={2500}>
+                    <Box>
+                        <Typography variant="h2" className={classes.titleFont}>About Me</Typography>
+                        <Content />
+                        <Box className={classes.spaceMobile}></Box>
+                        <Typography variant="h2" className={classes.titleFont}>My Skills</Typography>
+                        <Skills />
+                    </Box>
+                </Fade>
+            </MediaQuery>
+        </>
     );
 };
 

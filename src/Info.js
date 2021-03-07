@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaQuery from "react-responsive";
 import { makeStyles, Typography, Box } from '@material-ui/core';
 import { Contact } from './Chips';
 import Img from './images/myphoto.JPG';
@@ -9,7 +10,11 @@ const useStyles = makeStyles({
     },
     imgBox: {
         width: "35%",
-        margin: "0 auto"
+        margin: "0 auto 20px auto"
+    },
+    imgBoxMobile: {
+        width: "60%",
+        margin: "0 auto 20px auto"
     },
     img: {
         width: "100%",
@@ -23,15 +28,33 @@ const useStyles = makeStyles({
 
 function Name() {
     const classes = useStyles();
-    return <Typography variant="h2" className={classes.titleFont}>Shinya Kimura</Typography>
+    return (
+        <>
+            <MediaQuery query="(min-width: 769px)">
+                <Typography variant="h1" className={classes.titleFont}>Shinya Kimura</Typography>
+            </MediaQuery>
+            <MediaQuery query="(max-width: 769px)">
+                <Typography variant="h2" className={classes.titleFont}>Shinya Kimura</Typography>
+            </MediaQuery>
+        </>
+    )
 };
 
 function MyImg() {
     const classes = useStyles();
     return (
-        <Box className={classes.imgBox}>
-            <img src={Img} className={classes.img} />
-        </Box>
+        <>
+            <MediaQuery query="(min-width: 769px)">
+                <Box className={classes.imgBox}>
+                    <img src={Img} className={classes.img} />
+                </Box>
+            </MediaQuery>
+            <MediaQuery query="(max-width: 769px)">
+                <Box className={classes.imgBoxMobile}>
+                    <img src={Img} className={classes.img} />
+                </Box>
+            </MediaQuery>
+        </>
     );
 };
 

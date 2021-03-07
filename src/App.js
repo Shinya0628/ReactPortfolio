@@ -36,7 +36,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <MediaQuery query="(min-width: 767px)">
+        <MediaQuery query="(min-width: 769px)">
           <Grid container direction="row">
             <Grid item className={classes.gridItem1}>
               <Info />
@@ -47,7 +47,7 @@ function App() {
             </Grid>
           </Grid>
         </MediaQuery>
-        <MediaQuery query="(max-width: 767px)">
+        <MediaQuery query="(max-width: 769px)">
           <Grid container direction="column">
             <Grid item className={classes.gridItem1Mobile}>
               <Info />
